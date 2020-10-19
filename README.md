@@ -1,5 +1,5 @@
 # jsonplaceholder_project
-Use http://jsonplaceholder.typicode.com to show how I work with API and routing
+Use http://jsonplaceholder.typicode.com to show how I work with API and routing. I'm using only react-bootstrap for styling. 
 
 1. For start you need to instal packages: 
 
