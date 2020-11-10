@@ -7,7 +7,8 @@ import {
     SEARCH_ELEMENTS,
     DELETE_POST_ITEM,
     DELETE_COMMENT_ITEM,
-    ADD_NEW_POST
+    ADD_NEW_POST,
+    ADD_NEW_COMMENT
 } from './constants';
 
 const defaultState = {};
@@ -25,6 +26,15 @@ export default (state = defaultState, action) => {
             newPostsList.unshift(payload);
             return Object.assign({}, state, {
                 posts: newPostsList
+            });
+        case ADD_NEW_COMMENT:
+            const newPostCommentsList = state.activePost && state.activePost.comments ? state.activePost.comments : [];
+            newPostCommentsList.unshift(payload);
+            return Object.assign({}, state, {
+                activePost: {
+                    ...state.activePost,
+                    comments: newPostCommentsList
+                }
             });
         case DELETE_POST_ITEM:
             const newPostList = state[payload.type] ? state[payload.type].filter(item => item.id !== payload.id) : [];

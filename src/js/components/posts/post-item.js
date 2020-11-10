@@ -11,7 +11,7 @@ const PostItem = ({ post, deletePost }) => {
             <Row>
                 <Col md={10}>
                 <NavLink
-                    className='link'
+                    className='link post-link'
                     exact to={`posts/${post.id}`}
                 >
                     {post.title}

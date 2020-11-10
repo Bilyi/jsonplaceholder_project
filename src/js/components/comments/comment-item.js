@@ -43,7 +43,7 @@ const CommentItem = ({
     };
 
     return (
-        <Row>
+        <Row className="comment-row">
             <Col md={3}>{comment.email}</Col>
             { !isEdit ? (
                 <Col md={9}>

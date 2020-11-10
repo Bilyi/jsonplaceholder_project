@@ -20,8 +20,9 @@ const Comments = ({ comments, postId, location, addNewItem }) => {
     const toggleModal = () => {
         if(isCollapsed) {
             setNewComment({
-                userId: 1,
-                title: '',
+                postId: postId,
+                email: '',
+                name: '',
                 body: ''
             })
         }
@@ -29,7 +30,6 @@ const Comments = ({ comments, postId, location, addNewItem }) => {
     };
 
     const changeInput = (e) => {
-        e.preventDefault();
         const id = e.target.id;
         const value = e.target.value;
 
@@ -62,7 +62,7 @@ const Comments = ({ comments, postId, location, addNewItem }) => {
                 <Card>
                     <Card.Header>
                         <Accordion.Toggle as={Button} variant="link" onClick={toggleModal} eventKey="0">
-                            Add new post
+                            Add new comment
                         </Accordion.Toggle>
                     </Card.Header>
                     <Accordion.Collapse eventKey="0">

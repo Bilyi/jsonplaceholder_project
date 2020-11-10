@@ -8,7 +8,8 @@ import {
     SEARCH_ELEMENTS,
     DELETE_POST_ITEM,
     DELETE_COMMENT_ITEM,
-    ADD_NEW_POST
+    ADD_NEW_POST,
+    ADD_NEW_COMMENT
 } from './constants';
 
 const DATA_API = 'http://jsonplaceholder.typicode.com';
@@ -56,7 +57,7 @@ export function addNewItem(type, item) {
                 if(type === 'posts') {
                     dispatch(saveNewPost(item));
                 } else if(type === 'comments') {
-                    dispatch()
+                    dispatch(saveNewComment(item));
                 }
             })
             .catch(error => {
@@ -99,6 +100,13 @@ export function saveNewPost(post) {
     return {
         type: ADD_NEW_POST,
         payload: post
+    }
+}
+
+export function saveNewComment(comment) {
+    return {
+        type: ADD_NEW_COMMENT,
+        payload: comment
     }
 }
 
